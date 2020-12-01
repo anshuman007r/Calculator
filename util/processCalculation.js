@@ -1,6 +1,18 @@
 export const processCalculation = (value, item) =>{
+    let lengthOfContent = value.length
     if(item === 'C'){
         return '0'
+    }else if((value[lengthOfContent-1]==='+' || 
+        value[lengthOfContent-1]==='-' || 
+        value[lengthOfContent-1]==='*'||
+        value[lengthOfContent-1]==='/') &&
+        (item==='+' || 
+        item==='-' || 
+        item==='*'||
+        item==='/')){
+        let valueModified=value.slice(0,lengthOfContent-1)
+        return valueModified + item
+
     }else if(item === '='){
         if(value === '100+100'){
             return  eval(value+'+20')
