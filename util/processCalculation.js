@@ -28,14 +28,12 @@ export const processCalculation = (value, item) =>{
                 return value.slice(0,len-2)
             }else if(value[len-1]==='%'){
                 let multiSign = value.split('')
-                console.log(multiSign)
                 if(multiSign.indexOf('+')>0 && multiSign.indexOf('-')>0){
                     if(multiSign.indexOf('+')>multiSign.indexOf('-')){
                         let seperator = value.split('+')
                         let prefix=eval(seperator[0])
                         let lenOfPostfix =seperator[1].length
                         let postfix = eval('100+'+seperator[1].slice(0,[lenOfPostfix-1]))
-                        console.log(seperator,prefix,postfix,lenOfPostfix)
                         return eval(prefix+'*'+postfix+'/100')
 
                     }else{
