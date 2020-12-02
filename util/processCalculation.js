@@ -8,11 +8,16 @@ export const processCalculation = (value, item) =>{
         value[lengthOfContent-1]==='/') &&
         (item==='+' || 
         item==='-' || 
-        item==='*'||
-        item==='/')){
-        let valueModified=value.slice(0,lengthOfContent-1)
-        return valueModified + item
-
+        item==='x'||
+        item==='÷')){
+            let valueModified=value.slice(0,lengthOfContent-1)
+            if(item ==='x'){
+                return valueModified + '*'
+            }else if(item === '÷'){
+                return valueModified + '/'
+            }else{
+                return valueModified + item  
+            }
     }else if(item === '='){
         if(value === '100+100'){
             return  eval(value+'+20')
