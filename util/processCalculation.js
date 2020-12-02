@@ -30,7 +30,7 @@ export const processCalculation = (value, item) =>{
         }else if(value && value.length>0){
             let len =value.length
             if(value[len-1]==='+' || value[len-1]=== '-' || value[len-1]==='*'||  value[len-1]==='/'){
-                return value.slice(0,len-2)
+                return value.slice(0,len-1)
             }else if(value[len-1]==='%'){
                 let multiSign = value.split('')
                 if(multiSign.indexOf('+')>0 && multiSign.indexOf('-')>0){
