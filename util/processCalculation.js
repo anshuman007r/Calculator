@@ -91,7 +91,11 @@ export const processCalculation = (value, item) =>{
         return value + '/'
     }else{
         if(value === '0'){
-        return item
+            if(parseInt(item) && item>value){
+                return item
+            }else{
+                return value + item
+            }
         }else{
         return value + item
         }
